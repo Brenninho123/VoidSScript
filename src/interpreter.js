@@ -1,9 +1,9 @@
 export function interpret(ast) {
-  let code = ast.body.join(" ");
+  let js = ast.body.join(" ");
 
-  code = code
+  js = js
     .replace(/print/g, "console.log")
     .replace(/func/g, "function");
 
-  eval(code);
+  eval(js);
 }
