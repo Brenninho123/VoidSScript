@@ -4,5 +4,5 @@ export function toLua(code) {
     .replace(/let |var |const /g, "")
     .replace(/{/g, "")
     .replace(/}/g, "end")
-    .replace(/print/g, "debugPrint");
+    .replace(/print/g, "print");
 }
