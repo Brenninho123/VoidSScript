@@ -1,9 +1,8 @@
-import { tokenize } from "./lexer.js";
-import { parse } from "./parser.js";
-import { run } from "./interpreter.js";
+#!/usr/bin/env node
+import fs from "fs";
+import { transpileToJS } from "./src/transpile-js.js";
 
-const code = `
-print("Hello Void")
-`;
+const file = process.argv[2];
+const code = fs.readFileSync(file, "utf8");
 
-run(parse(tokenize(code)));
+console.log(transpileToJS(code));
