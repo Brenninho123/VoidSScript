@@ -1,3 +1,6 @@
-export function parse(tokens) {
-  return tokens.join(" ");
+export function parser(tokens) {
+  return {
+    type: "Program",
+    body: tokens
+  };
 }
