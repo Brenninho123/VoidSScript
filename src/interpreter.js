@@ -1,5 +1,9 @@
-export function run(ast) {
-  const safe = ast
-    .replace(/print/g, "console.log");
-  eval(safe);
+export function interpret(ast) {
+  let code = ast.body.join(" ");
+
+  code = code
+    .replace(/print/g, "console.log")
+    .replace(/func/g, "function");
+
+  eval(code);
 }
